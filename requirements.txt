@@ -1,0 +1,17 @@
+# Dependências da Aplicação de Comparação de Orçamentos Aprovados
+# 
+# Para instalar todas as dependências, execute:
+# pip install -r requirements.txt
+
+# Interface gráfica moderna baseada em Tkinter
+customtkinter>=5.2.0
+
+# Dependências do CustomTkinter
+tkinter  # Incluído por padrão no Python
+packaging>=22.0
+darkdetect>=0.7.0
+
+# Dependências padrão do Python (já incluídas)
+# re - Expressões regulares (built-in)
+# sys - Sistema (built-in)
+# os - Sistema operacional (built-in)
