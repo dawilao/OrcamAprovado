@@ -19,8 +19,8 @@ Funcionalidades principais:
 - Logs de debug no console para acompanhamento
 
 Autor: DAWHEN SOFTWARES
-Data: 17 de junho de 2025
-Versão: 0.1.0
+Data: 17/07/2025
+Versão: 1.0.0
 
 Dependências:
 - customtkinter: Para interface gráfica moderna
@@ -54,8 +54,10 @@ class OrcamentoAprovadoApp:
         self.janela = ctk.CTk()
         self.janela.title("Comparação de Orçamento")
         self.janela.geometry("800x600")
+        self.janela.minsize(800, 600)
         
         self._criar_interface()        
+    
     def _criar_interface(self):
         """
         Cria e configura todos os elementos da interface gráfica.
@@ -99,7 +101,12 @@ class OrcamentoAprovadoApp:
         self.entry_adicionado.grid(row=4, column=2, padx=5, pady=5)
         
         botao_comparar = ctk.CTkButton(frame, text="Comparar", command=self.comparar_orcamentos)
-        botao_comparar.grid(row=5, column=0, columnspan=3, pady=20)    
+        botao_comparar.grid(row=5, column=0, columnspan=3, pady=20)
+
+        # Rodapé
+        rodape = ctk.CTkLabel(self.janela, text="Dawhen © 2025 - Todos os direitos reservados", font=("Segoe UI", 10))
+        rodape.pack(side="bottom", pady=(0, 10))
+
     def comparar_orcamentos(self):
         """
         Realiza a comparação entre os dados do orçamento portal e os itens/quantitativos.
@@ -190,6 +197,7 @@ class OrcamentoAprovadoApp:
         for item in itens_dict:
             if item not in items_portal:
                 self.entry_adicionado.insert("end", f"{item} - Item não encontrado no orçamento portal\n")
+
     def run(self):
         """
         Inicia a execução da aplicação.
